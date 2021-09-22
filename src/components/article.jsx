@@ -4,7 +4,7 @@ const Article = ({ article, className = "" }) => {
   return (
     <article
       className={[
-        "w-80 p-4 bg-gray-100 rounded-md cursor-pointer hover:bg-gray-200",
+        "p-4 bg-gray-100 rounded-md cursor-pointer hover:bg-gray-200",
         className,
       ].join(" ")}
     >
