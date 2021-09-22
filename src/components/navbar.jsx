@@ -1,7 +1,7 @@
 import React from "react";
 
 const Navbar = () => {
-  const tabs = ["Home", "Article", "Articles list", "About"];
+  const tabs = ["Home", "Articles", "Add an article"];
 
   return (
     <header>
