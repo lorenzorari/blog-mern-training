@@ -29,7 +29,7 @@ const ArticlesPage = () => {
 
       <div className="flex flex-wrap gap-2">
         {articles.map((article) => (
-          <div key={article._id} className="group relative">
+          <div key={article._id} className="group relative flex-1">
             <Article article={article} />
             <span
               className="absolute top-2 right-4 cursor-pointer opacity-0 group-hover:opacity-100"
