@@ -6,6 +6,13 @@ const AddArticlePage = () => {
     author: "",
   });
 
+  const resetForm = () => {
+    setForm({
+      title: "",
+      author: "",
+    });
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     const newForm = { ...form };
@@ -24,6 +31,8 @@ const AddArticlePage = () => {
       .then((res) => res.json())
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+
+    resetForm();
   };
 
   return (
