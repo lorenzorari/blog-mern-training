@@ -29,10 +29,10 @@ const ArticlesPage = () => {
 
       <div className="flex flex-wrap gap-2">
         {articles.map((article) => (
-          <div key={article._id} className="relative">
+          <div key={article._id} className="group relative">
             <Article article={article} />
             <span
-              className="absolute top-2 right-4 cursor-pointer"
+              className="absolute top-2 right-4 cursor-pointer opacity-0 group-hover:opacity-100"
               onClick={() => handleDelete(article)}
             >
               &#10005;
