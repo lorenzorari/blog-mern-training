@@ -9,7 +9,17 @@ const ArticlesPage = () => {
       .then((res) => res.json())
       .then((res) => setArticles(res))
       .catch((err) => console.log(err));
-  });
+  }, []);
+
+  const handleDelete = (article) => {
+    fetch(`/api/articles/${article._id}`, { method: "DELETE" })
+      .then((res) => res.json())
+      .then((res) => {
+        setArticles(articles.filter((article) => article._id !== res._id));
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <main className="mx-80 my-10">
@@ -17,9 +27,17 @@ const ArticlesPage = () => {
         Articles
       </h1>
 
-      <div>
+      <div className="flex flex-wrap gap-2">
         {articles.map((article) => (
-          <Article article={article} />
+          <div key={article._id} className="relative">
+            <Article article={article} />
+            <span
+              className="absolute top-2 right-4 cursor-pointer"
+              onClick={() => handleDelete(article)}
+            >
+              &#10005;
+            </span>
+          </div>
         ))}
       </div>
     </main>
